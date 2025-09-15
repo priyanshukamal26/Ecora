@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Climate Change & Global Warming</title>
+  <style>
+    :root {
+      --bg: #fffaf0;
+      --card: #ffffff;
+      --accent: #ffb703;
+      --accent-2: #fb8500;
+      --radius: 18px;
+      --shadow: 0 6px 14px rgba(0,0,0,0.08);
+    }
+    body {
+      margin: 0;
+      font-family: "Comic Sans MS", "Comic Neue", cursive, sans-serif;
+      background: linear-gradient(180deg, #fffdf6 0%, #fdf3d6 100%);
+      color: #222;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+    }
+    .wrap { width: 100%; max-width: 1000px; }
+    header { text-align: center; margin-bottom: 20px; }
+    .logo {
+      width: 80px; height: 80px; margin: 0 auto 12px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, var(--accent), var(--accent-2));
+      display: grid; place-items: center;
+      color: white; font-weight: 700; font-size: 28px;
+      box-shadow: var(--shadow);
+    }
+    h1 { margin: 0; font-size: 26px; color: var(--accent-2); }
+    p.lead { margin: 8px 0 0; color: #666; font-size: 15px; }
+    main { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+    .video-wrap {
+      position: relative; padding-top: 56.25%;
+      border-radius: 12px; overflow: hidden; margin: 12px 0; background: #000;
+    }
+    .video-wrap iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+    }
+    h2 { font-size: 20px; margin: 10px 0; color: var(--accent-2); }
+    .info-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+      gap: 14px; margin-top: 10px;
+    }
+    .info-card {
+      background: #fff4e6;
+      border-radius: 16px;
+      padding: 14px;
+      text-align: center;
+      box-shadow: inset 0 0 10px rgba(251,133,0,0.2);
+    }
+    .info-card h3 { color: #fb8500; }
+    .info-card p { font-size: 13px; margin: 0; }
+    .quiz .q { margin: 10px 0; }
+    .choices button {
+      display: block; width: 100%; padding: 10px;
+      border-radius: 12px; border: 2px solid #ffd27f; background: #fff;
+      margin: 6px 0; cursor: pointer; font-weight: 600;
+    }
+    .choices button.correct { background: #d9fbe4; border-color: #37b24d; }
+    .choices button.wrong { background: #ffd6d6; border-color: #e03131; }
+    footer { text-align: center; margin-top: 20px; font-size: 13px; color: #666; }
+    @media print { .quiz, .video-wrap, footer { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">☀️</div>
+      <h1>Climate Change & Global Warming</h1>
+      <p class="lead">Learning for kids — let's protect our Earth together!</p>
+    </header>
+
+    <main>
+      <div class="card">
+        <h2>Read & Learn</h2>
+        <p>
+          Climate change is what happens when our Earth’s weather patterns slowly
+          change over time. Global warming is a part of climate change. It means the
+          Earth is getting hotter because of too many “greenhouse gases,” like carbon
+          dioxide, going into the air. These gases trap heat, like a big blanket
+          around our planet. While blankets keep us cozy, too much heat makes Earth
+          uncomfortable! The ice at the North and South Poles begins to melt, oceans
+          rise, and animals like polar bears lose their homes. Weather also becomes
+          strange: some places get too hot, others have heavy rains or storms.
+        </p>
+        <p>
+          But here’s the good news: we can help! 🌱 When we plant trees, they drink
+          up carbon dioxide and give back fresh air. Turning off lights, using less
+          water, recycling, and riding bicycles instead of always driving cars all
+          help reduce greenhouse gases. Imagine Earth as our shared playground. If
+          we leave trash or break swings, no one can enjoy it. But if we keep it
+          clean and safe, everyone has fun. By caring for our planet, we make sure
+          it stays a happy, healthy home for people, animals, and plants. Every
+          little action counts, and kids like you can be superheroes for the Earth.
+          Together, we can cool down our “blanket” and keep our world safe for the
+          future! 🌍✨
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Watch & Learn</h2>
+        <p>Here’s a short video to help you understand climate change better:</p>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/Y3gqoDUtmt4" title="Climate Change for Kids" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Key Ideas</h2>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>🌡️ Heat</h3>
+            <p>Earth is warming up faster than before.</p>
+          </div>
+          <div class="info-card">
+            <h3>❄️ Ice</h3>
+            <p>Melting ice puts animals and coasts at risk.</p>
+          </div>
+          <div class="info-card">
+            <h3>♻️ Reduce</h3>
+            <p>Use less energy, recycle, and save water.</p>
+          </div>
+          <div class="info-card">
+            <h3>🌳 Trees</h3>
+            <p>They absorb carbon and keep the air clean.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card quiz">
+        <h2>Quick Quiz</h2>
+        <div id="quizArea"></div>
+        <button onclick="showScore()">Show My Score</button>
+        <div id="score" style="margin-top:10px;font-weight:700"></div>
+      </div>
+    </main>
+
+    <footer>
+      <p>🌍 Every child can make a difference — let's keep our planet cool and safe!</p>
+    </footer>
+  </div>
+
+  <script>
+    const quiz = [
+      {q:'What is global warming?',choices:['Earth getting cooler','Earth getting hotter','Earth staying the same'],a:1},
+      {q:'Which of these helps fight climate change?',choices:['Planting trees','Wasting water','Leaving lights on'],a:0},
+      {q:'Why are polar bears in danger?',choices:['Because ice is melting','Because they don’t like cold','Because they eat too much'],a:0}
+    ];
+
+    const quizArea = document.getElementById('quizArea');
+    let answers = Array(quiz.length).fill(null);
+
+    function renderQuiz(){
+      quizArea.innerHTML='';
+      quiz.forEach((item,idx)=>{
+        const div=document.createElement('div');div.className='q';
+        const q=document.createElement('div');q.textContent=(idx+1)+'. '+item.q;div.appendChild(q);
+        const choices=document.createElement('div');choices.className='choices';
+        item.choices.forEach((c,cidx)=>{
+          const btn=document.createElement('button');btn.textContent=c;
+          btn.onclick=()=>{
+            answers[idx]=cidx;
+            [...choices.children].forEach(b=>b.classList.remove('correct','wrong'));
+            if(cidx===item.a)btn.classList.add('correct');else btn.classList.add('wrong');
+          };
+          choices.appendChild(btn);
+        });
+        div.appendChild(choices);
+        quizArea.appendChild(div);
+      });
+    }
+
+    function showScore(){
+      let score=0;answers.forEach((a,i)=>{if(a===quiz[i].a)score++;});
+      document.getElementById('score').textContent='Your score: '+score+' / '+quiz.length;
+    }
+
+    renderQuiz();
+  </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Introduction to Environment &amp; Sustainability</title>
+  <meta name="description" content="A fun and friendly introduction to Environment & Sustainability for children.">
+  <style>
+    :root{
+      --bg: #fdfcf6;
+      --card: #fffefc;
+      --muted: #555;
+      --accent: #ffb703;
+      --accent-2: #fb8500;
+      --radius: 18px;
+      --shadow: 0 6px 14px rgba(0,0,0,0.08);
+      --max-width: 1000px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Comic Sans MS", "Comic Neue", cursive, system-ui, sans-serif;
+      background: linear-gradient(180deg,#fffdf7 0%, #fdf9e6 100%);
+      color:#222;
+      line-height:1.6;
+      padding:24px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .wrap{width:100%;max-width:var(--max-width)}
+
+    header{text-align:center;margin-bottom:20px}
+
+    .logo{
+      width:70px;height:70px;margin:0 auto 10px;border-radius:50%;background:radial-gradient(circle at 30% 30%, var(--accent), var(--accent-2));display:grid;place-items:center;color:white;font-weight:700;font-size:22px;box-shadow:var(--shadow)
+    }
+    h1{margin:0;font-size:26px;color:var(--accent-2)}
+    p.lead{margin:8px 0 0;color:#666;font-size:15px}
+
+    main{display:grid;grid-template-columns:1fr;gap:20px}
+
+    .card{background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+
+    .video-wrap{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;margin:12px 0;background:#000}
+    .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+    h2{font-size:20px;margin:10px 0;color:var(--accent-2)}
+    h3{font-size:16px;margin:8px 0;color:#333}
+
+    .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:10px}
+    .info-card{background:#fff8e7;border-radius:16px;padding:14px;text-align:center;box-shadow:inset 0 0 10px rgba(255,183,3,0.2)}
+    .info-card h3{color:#fb8500}
+    .info-card p{font-size:13px;margin:0}
+
+    .quiz .q{margin:10px 0}
+    .choices button{display:block;width:100%;padding:10px;border-radius:12px;border:2px solid #ffd27f;background:#fff;margin:6px 0;cursor:pointer;font-weight:600}
+    .choices button.correct{background:#d9fbe4;border-color:#37b24d}
+    .choices button.wrong{background:#ffd6d6;border-color:#e03131}
+
+    footer{text-align:center;margin-top:20px;font-size:13px;color:#666}
+
+    @media print{
+      .quiz, .video-wrap, footer{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">🌎</div>
+      <h1>Introduction to Environment &amp; Sustainability</h1>
+      <p class="lead">Fun learning for kids — Let's protect our planet together!</p>
+    </header>
+
+    <main>
+      <div class="card">
+        <h2>Read &amp; Learn</h2>
+        <p>
+          The environment is everything around us — the air we breathe, the water we drink, the trees, animals, and even the soil beneath our feet. Taking care of our environment means making sure that all living things, including us, have a safe and healthy place to live. When we talk about “sustainability,” we mean living in a way that does not use up all the Earth’s resources so quickly. Imagine if you had a big jar of cookies. If you eat them all in one day, there will be none left for tomorrow or for your friends. But if you share them and eat just a few at a time, the cookies will last longer and make everyone happy. Sustainability works the same way with nature. We need to use things like water, trees, and energy carefully so future generations can enjoy them too. 
+        </p>
+        <p>
+          Kids can make a big difference! Turning off lights when leaving a room, recycling bottles and paper, planting trees, or using a bicycle instead of a car are simple steps that help. Even small actions add up to a huge impact when millions of children and families around the world do them together. Remember, Earth is like our shared home. Just like we keep our bedrooms tidy and clean, we should also keep our planet safe and healthy. By protecting the environment, we are making sure that animals, plants, and people can live happily today and tomorrow. Together, we can be superheroes for the Earth! 🌍✨
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Watch &amp; Learn</h2>
+        <p>Here’s a short video to help you understand how to care for our world:</p>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/gEk6JLJNg0U" title="Environment for Kids" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Key Ideas</h2>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>🌱 Plants</h3>
+            <p>They clean the air and give us oxygen. Plant more trees!</p>
+          </div>
+          <div class="info-card">
+            <h3>💧 Water</h3>
+            <p>Save water by turning off taps. Water is precious!</p>
+          </div>
+          <div class="info-card">
+            <h3>♻️ Recycling</h3>
+            <p>Use items again instead of throwing them away.</p>
+          </div>
+          <div class="info-card">
+            <h3>🚲 Transport</h3>
+            <p>Walk, cycle, or share rides to keep the air clean.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card quiz">
+        <h2>Quick Quiz</h2>
+        <div id="quizArea"></div>
+        <button onclick="showScore()">Show My Score</button>
+        <div id="score" style="margin-top:10px;font-weight:700"></div>
+      </div>
+    </main>
+
+    <footer>
+      <p>🌍 Learning about the Earth is fun — every small step makes a big difference!</p>
+    </footer>
+  </div>
+
+  <script>
+    const quiz = [
+      {q:'Which of these helps our planet?',choices:['Throwing trash on the ground','Planting trees','Wasting water'],a:1},
+      {q:'What should you do with a plastic bottle?',choices:['Recycle it','Throw it in the river','Burn it outside'],a:0},
+      {q:'Which is a clean way to travel?',choices:['Cycling','Leaving lights on','Driving everywhere'],a:0}
+    ];
+
+    const quizArea = document.getElementById('quizArea');
+    let answers = Array(quiz.length).fill(null);
+
+    function renderQuiz(){
+      quizArea.innerHTML='';
+      quiz.forEach((item,idx)=>{
+        const div=document.createElement('div');div.className='q';
+        const q=document.createElement('div');q.textContent=(idx+1)+'. '+item.q;div.appendChild(q);
+        const choices=document.createElement('div');choices.className='choices';
+        item.choices.forEach((c,cidx)=>{
+          const btn=document.createElement('button');btn.textContent=c;
+          btn.onclick=()=>{
+            answers[idx]=cidx;
+            [...choices.children].forEach(b=>b.classList.remove('correct','wrong'));
+            if(cidx===item.a)btn.classList.add('correct');else btn.classList.add('wrong');
+          };
+          choices.appendChild(btn);
+        });
+        div.appendChild(choices);
+        quizArea.appendChild(div);
+      });
+    }
+
+    function showScore(){
+      let score=0;answers.forEach((a,i)=>{if(a===quiz[i].a)score++;});
+      document.getElementById('score').textContent='Your score: '+score+' / '+quiz.length;
+    }
+
+    renderQuiz();
+  </script>
+</body>
+</html>

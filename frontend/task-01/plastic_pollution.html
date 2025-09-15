@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Plastic Pollution & Ocean Health</title>
+  <style>
+    :root {
+      --bg: #f0fbff;
+      --card: #ffffff;
+      --accent: #00bcd4;
+      --accent-2: #0288d1;
+      --radius: 18px;
+      --shadow: 0 6px 14px rgba(0,0,0,0.08);
+    }
+    body {
+      margin: 0;
+      font-family: "Comic Sans MS", "Comic Neue", cursive, sans-serif;
+      background: linear-gradient(180deg,#e0f7fa 0%,#b2ebf2 100%);
+      color: #222;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+    }
+    .wrap { width: 100%; max-width: 1000px; }
+    header { text-align: center; margin-bottom: 20px; }
+    .logo {
+      width: 80px; height: 80px; margin: 0 auto 12px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, var(--accent), var(--accent-2));
+      display: grid; place-items: center;
+      color: white; font-weight: 700; font-size: 28px;
+      box-shadow: var(--shadow);
+    }
+    h1 { margin: 0; font-size: 28px; color: var(--accent-2); }
+    p.lead { margin: 8px 0 0; color: #555; font-size: 15px; }
+    main { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+    .video-wrap {
+      position: relative; padding-top: 56.25%;
+      border-radius: 12px; overflow: hidden; margin: 12px 0; background: #000;
+    }
+    .video-wrap iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+    }
+    h2 { font-size: 20px; margin: 10px 0; color: var(--accent-2); }
+    .info-grid {
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+      gap: 14px; margin-top: 10px;
+    }
+    .info-card {
+      background: #e0f7fa;
+      border-radius: 16px;
+      padding: 14px;
+      text-align: center;
+      box-shadow: inset 0 0 10px rgba(0,188,212,0.2);
+    }
+    .info-card h3 { color: var(--accent-2); }
+    .info-card p { font-size: 13px; margin: 0; }
+    .quiz .q { margin: 10px 0; }
+    .choices button {
+      display: block; width: 100%; padding: 10px;
+      border-radius: 12px; border: 2px solid #4dd0e1; background: #fff;
+      margin: 6px 0; cursor: pointer; font-weight: 600;
+    }
+    .choices button.correct { background: #d9fbe4; border-color: #388e3c; }
+    .choices button.wrong { background: #ffd6d6; border-color: #e03131; }
+    footer { text-align: center; margin-top: 20px; font-size: 13px; color: #666; }
+    @media print { .quiz, .video-wrap, footer { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">🌊</div>
+      <h1>Plastic Pollution & Ocean Health</h1>
+      <p class="lead">Let’s keep our oceans blue and clean!</p>
+    </header>
+
+    <main>
+      <div class="card">
+        <h2>Read & Learn</h2>
+        <p>
+          Oceans cover more than 70% of our planet and are home to millions of
+          plants and animals. But sadly, our oceans are being harmed by plastic
+          pollution. Plastic is useful in daily life, but when we throw it away
+          carelessly, it often ends up in rivers and oceans. Unlike food or
+          paper, plastic doesn’t easily break down. Instead, it stays for
+          hundreds of years, breaking into tiny pieces called microplastics.
+        </p>
+        <p>
+          Sea turtles sometimes mistake plastic bags for jellyfish and eat them,
+          which can make them very sick. Fish and birds also get caught in old
+          bottles, nets, or straws. Even the smallest sea creatures can swallow
+          microplastics, and when that happens, the entire food chain is
+          affected—even humans! Oceans are like Earth’s heart, giving us oxygen,
+          food, and even medicines. If they are full of trash, both sea life and
+          people suffer.
+        </p>
+        <p>
+          The good news is that we can help! By using reusable bottles, cloth
+          bags, and metal straws, we stop extra plastic waste. Recycling and
+          cleaning beaches also make a big difference. Kids can join in by
+          saying “no” to single-use plastics, telling friends about ocean
+          health, and helping out in community clean-ups. Together, small
+          actions create big waves of change. Imagine a future where sea turtles
+          swim freely, colorful coral reefs shine brightly, and oceans sparkle
+          without plastic. That’s the healthy ocean world we should all work
+          towards! 🌍🐢🐟
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Watch & Learn</h2>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/HQTUWK7CM-Y" title="Plastic Pollution & Ocean Health" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Additional Reading</h2>
+        <ul>
+          <li><a href="https://youtu.be/aiEBEGKQp_I" target="_blank">🎥 Extra Video: Plastic Pollution Explained</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Plastic_pollution" target="_blank">🌐 Wikipedia: Plastic Pollution</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Fun Facts</h2>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>🐢 Turtles</h3>
+            <p>Sea turtles often mistake plastic bags for jellyfish.</p>
+          </div>
+          <div class="info-card">
+            <h3>🪸 Coral Reefs</h3>
+            <p>Healthy reefs support 25% of marine life.</p>
+          </div>
+          <div class="info-card">
+            <h3>🐟 Fish</h3>
+            <p>Many fish accidentally eat tiny microplastics.</p>
+          </div>
+          <div class="info-card">
+            <h3>🌍 Planet</h3>
+            <p>Oceans give us most of the oxygen we breathe!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card quiz">
+        <h2>Quick Quiz</h2>
+        <div id="quizArea"></div>
+        <button onclick="showScore()">Show My Score</button>
+        <div id="score" style="margin-top:10px;font-weight:700"></div>
+      </div>
+    </main>
+
+    <footer>
+      <p>🌊 A clean ocean means a healthy planet for everyone!</p>
+    </footer>
+  </div>
+
+  <script>
+    const quiz = [
+      {q:'What happens when turtles eat plastic bags?',choices:['They get stronger','They get sick','They grow faster'],a:1},
+      {q:'What are tiny pieces of plastic called?',choices:['Microplastics','Dust','Pebbles'],a:0},
+      {q:'How can we help reduce plastic waste?',choices:['Use reusable bottles','Throw trash in rivers','Use more straws'],a:0}
+    ];
+
+    const quizArea=document.getElementById('quizArea');
+    let answers=Array(quiz.length).fill(null);
+
+    function renderQuiz(){
+      quizArea.innerHTML='';
+      quiz.forEach((item,idx)=>{
+        const div=document.createElement('div');div.className='q';
+        const q=document.createElement('div');q.textContent=(idx+1)+'. '+item.q;div.appendChild(q);
+        const choices=document.createElement('div');choices.className='choices';
+        item.choices.forEach((c,cidx)=>{
+          const btn=document.createElement('button');btn.textContent=c;
+          btn.onclick=()=>{
+            answers[idx]=cidx;
+            [...choices.children].forEach(b=>b.classList.remove('correct','wrong'));
+            if(cidx===item.a)btn.classList.add('correct');else btn.classList.add('wrong');
+          };
+          choices.appendChild(btn);
+        });
+        div.appendChild(choices);
+        quizArea.appendChild(div);
+      });
+    }
+
+    function showScore(){
+      let score=0;answers.forEach((a,i)=>{if(a===quiz[i].a)score++;});
+      document.getElementById('score').textContent='Your score: '+score+' / '+quiz.length;
+    }
+
+    renderQuiz();
+  </script>
+</body>
+</html>
