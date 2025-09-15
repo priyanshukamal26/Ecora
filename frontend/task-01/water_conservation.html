@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Water Conservation</title>
+  <style>
+    :root {
+      --bg: #f0faff;
+      --card: #ffffff;
+      --accent: #00b4d8;
+      --accent-2: #0077b6;
+      --radius: 18px;
+      --shadow: 0 6px 14px rgba(0,0,0,0.08);
+    }
+    body {
+      margin: 0;
+      font-family: "Comic Sans MS", "Comic Neue", cursive, sans-serif;
+      background: linear-gradient(180deg, #e6faff 0%, #d0f0ff 100%);
+      color: #222;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+    }
+    .wrap { width: 100%; max-width: 1000px; }
+    header { text-align: center; margin-bottom: 20px; }
+    .logo {
+      width: 80px; height: 80px; margin: 0 auto 12px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, var(--accent), var(--accent-2));
+      display: grid; place-items: center;
+      color: white; font-weight: 700; font-size: 28px;
+      box-shadow: var(--shadow);
+    }
+    h1 { margin: 0; font-size: 26px; color: var(--accent-2); }
+    p.lead { margin: 8px 0 0; color: #555; font-size: 15px; }
+    main { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+    .video-wrap {
+      position: relative; padding-top: 56.25%;
+      border-radius: 12px; overflow: hidden; margin: 12px 0; background: #000;
+    }
+    .video-wrap iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+    }
+    h2 { font-size: 20px; margin: 10px 0; color: var(--accent-2); }
+    .info-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+      gap: 14px; margin-top: 10px;
+    }
+    .info-card {
+      background: #e6f9ff;
+      border-radius: 16px;
+      padding: 14px;
+      text-align: center;
+      box-shadow: inset 0 0 10px rgba(0,183,255,0.2);
+    }
+    .info-card h3 { color: var(--accent-2); }
+    .info-card p { font-size: 13px; margin: 0; }
+    .quiz .q { margin: 10px 0; }
+    .choices button {
+      display: block; width: 100%; padding: 10px;
+      border-radius: 12px; border: 2px solid #90e0ef; background: #fff;
+      margin: 6px 0; cursor: pointer; font-weight: 600;
+    }
+    .choices button.correct { background: #d9fbe4; border-color: #37b24d; }
+    .choices button.wrong { background: #ffd6d6; border-color: #e03131; }
+    footer { text-align: center; margin-top: 20px; font-size: 13px; color: #666; }
+    @media print { .quiz, .video-wrap, footer { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">💧</div>
+      <h1>Water Conservation</h1>
+      <p class="lead">Fun learning for kids — every drop counts!</p>
+    </header>
+
+    <main>
+      <div class="card">
+        <h2>Read & Learn</h2>
+        <p>
+          Water is one of the most precious gifts of nature. Every living being —
+          humans, animals, and plants — needs water to survive. But did you know
+          that only a tiny amount of the water on Earth is fresh and safe for us to
+          drink? That’s why saving water, or “water conservation,” is very
+          important. If we waste water, there may not be enough for everyone in the
+          future. Imagine leaving the tap running while brushing your teeth — so
+          many liters of clean water go down the drain for no reason!
+        </p>
+        <p>
+          Conserving water is easy and fun! 🌱 You can save water by turning off
+          taps tightly, using a bucket instead of a shower, and watering plants in
+          the morning or evening so the sun doesn’t evaporate it quickly. Reusing
+          rainwater to water gardens or wash bicycles is another smart way to help.
+          When we all do small things, they add up to make a big difference. Think
+          of water like treasure in a magical bottle. If we protect it and use it
+          wisely, it will last for a long time. But if we waste it, the treasure
+          could disappear. By being careful, we help animals, plants, and people
+          everywhere. Together, we can make sure that future generations also have
+          enough water to drink, play, and grow. Every drop truly counts! 💦✨
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Watch & Learn</h2>
+        <p>Here’s a short video to help you understand water conservation better:</p>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/GOLf2RbxmzE" title="Water Conservation for Kids" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Additional Reading</h2>
+        <p>Want to learn more? Check out this extra video too:</p>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/OCzYdNSJF-k" title="Why We Should Save Water" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Key Ideas</h2>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>🚿 Save</h3>
+            <p>Turn off taps while brushing teeth.</p>
+          </div>
+          <div class="info-card">
+            <h3>🌧️ Collect</h3>
+            <p>Use rainwater for plants and cleaning.</p>
+          </div>
+          <div class="info-card">
+            <h3>🌱 Grow</h3>
+            <p>Water plants wisely in the morning or evening.</p>
+          </div>
+          <div class="info-card">
+            <h3>♻️ Reuse</h3>
+            <p>Find new ways to use water more than once.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card quiz">
+        <h2>Quick Quiz</h2>
+        <div id="quizArea"></div>
+        <button onclick="showScore()">Show My Score</button>
+        <div id="score" style="margin-top:10px;font-weight:700"></div>
+      </div>
+    </main>
+
+    <footer>
+      <p>💧 Small steps today keep our world flowing with water tomorrow!</p>
+    </footer>
+  </div>
+
+  <script>
+    const quiz = [
+      {q:'Why should we save water?',choices:['Because it is endless','Because only a little is fresh','Because it looks nice'],a:1},
+      {q:'What should you do while brushing teeth?',choices:['Leave tap on','Turn tap off','Use shower'],a:1},
+      {q:'When is the best time to water plants?',choices:['Afternoon','Morning/Evening','Night only'],a:1}
+    ];
+
+    const quizArea = document.getElementById('quizArea');
+    let answers = Array(quiz.length).fill(null);
+
+    function renderQuiz(){
+      quizArea.innerHTML='';
+      quiz.forEach((item,idx)=>{
+        const div=document.createElement('div');div.className='q';
+        const q=document.createElement('div');q.textContent=(idx+1)+'. '+item.q;div.appendChild(q);
+        const choices=document.createElement('div');choices.className='choices';
+        item.choices.forEach((c,cidx)=>{
+          const btn=document.createElement('button');btn.textContent=c;
+          btn.onclick=()=>{
+            answers[idx]=cidx;
+            [...choices.children].forEach(b=>b.classList.remove('correct','wrong'));
+            if(cidx===item.a)btn.classList.add('correct');else btn.classList.add('wrong');
+          };
+          choices.appendChild(btn);
+        });
+        div.appendChild(choices);
+        quizArea.appendChild(div);
+      });
+    }
+
+    function showScore(){
+      let score=0;answers.forEach((a,i)=>{if(a===quiz[i].a)score++;});
+      document.getElementById('score').textContent='Your score: '+score+' / '+quiz.length;
+    }
+
+    renderQuiz();
+  </script>
+</body>
+</html>

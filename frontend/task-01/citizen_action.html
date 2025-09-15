@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Environmental Policies & Citizen Action</title>
+  <style>
+    :root {
+      --bg: #f0fff4;
+      --card: #ffffff;
+      --accent: #4caf50;
+      --accent-2: #2e7d32;
+      --radius: 18px;
+      --shadow: 0 6px 14px rgba(0,0,0,0.08);
+    }
+    body {
+      margin: 0;
+      font-family: "Comic Sans MS", "Comic Neue", cursive, sans-serif;
+      background: linear-gradient(180deg,#e8f5e9 0%,#c8e6c9 100%);
+      color: #222;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+    }
+    .wrap { width: 100%; max-width: 1000px; }
+    header { text-align: center; margin-bottom: 20px; }
+    .logo {
+      width: 80px; height: 80px; margin: 0 auto 12px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, var(--accent), var(--accent-2));
+      display: grid; place-items: center;
+      color: white; font-weight: 700; font-size: 28px;
+      box-shadow: var(--shadow);
+    }
+    h1 { margin: 0; font-size: 28px; color: var(--accent-2); }
+    p.lead { margin: 8px 0 0; color: #555; font-size: 15px; }
+    main { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+    .video-wrap {
+      position: relative; padding-top: 56.25%;
+      border-radius: 12px; overflow: hidden; margin: 12px 0; background: #000;
+    }
+    .video-wrap iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+    }
+    h2 { font-size: 20px; margin: 10px 0; color: var(--accent-2); }
+    ul.actions { list-style: "🌍 "; padding-left: 1.2em; }
+    .quiz .q { margin: 10px 0; }
+    .choices button {
+      display: block; width: 100%; padding: 10px;
+      border-radius: 12px; border: 2px solid #a5d6a7; background: #fff;
+      margin: 6px 0; cursor: pointer; font-weight: 600;
+    }
+    .choices button.correct { background: #d9fbe4; border-color: #388e3c; }
+    .choices button.wrong { background: #ffd6d6; border-color: #e03131; }
+    footer { text-align: center; margin-top: 20px; font-size: 13px; color: #666; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">🌱</div>
+      <h1>Environmental Policies & Citizen Action</h1>
+      <p class="lead">Together, we can protect our planet!</p>
+    </header>
+
+    <main>
+      <div class="card">
+        <h2>Read & Learn</h2>
+        <p>
+          Environmental policies are rules and laws made by governments to protect nature,
+          reduce pollution, and keep our planet safe for people, animals, and plants. These
+          policies encourage clean energy, recycling, tree planting, and safe waste
+          management. But laws alone are not enough — every citizen has an important role to
+          play. 🌍
+        </p>
+        <p>
+          Citizen action means that ordinary people, like you and me, take small steps every
+          day to care for the environment. It can be as simple as turning off lights when
+          not in use, saving water, or choosing to walk instead of driving short distances.
+          When millions of people follow green habits, it creates a powerful positive
+          impact. Governments, schools, and communities work better when citizens support
+          eco-friendly policies through their daily actions.
+        </p>
+        <p>
+          Children can be eco-leaders too! By reminding parents to recycle, helping plant
+          trees, or spreading awareness among friends, kids make a big difference. Together,
+          environmental policies and citizen action are like two hands working side by side:
+          one sets the rules, and the other makes them come alive. When we all work
+          together, we can dream of a world with cleaner air, greener parks, healthier
+          oceans, and happy communities. 🌳💧💚
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>10 Actions Every Citizen Should Do 🌍</h2>
+        <ul class="actions">
+          <li>Reduce, reuse, and recycle daily waste.</li>
+          <li>Save water by turning off taps when not in use.</li>
+          <li>Switch off lights and fans when leaving a room.</li>
+          <li>Use bicycles, public transport, or walk for short distances.</li>
+          <li>Plant trees and care for gardens and local parks.</li>
+          <li>Avoid single-use plastics; carry reusable bags and bottles.</li>
+          <li>Dispose of garbage properly and keep streets clean.</li>
+          <li>Support eco-friendly policies and community clean-up events.</li>
+          <li>Teach friends and family about protecting nature.</li>
+          <li>Use renewable energy and eco-friendly products whenever possible.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Watch & Learn</h2>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/bmgJMUgYPp4" 
+                  title="Environmental Policies & Citizen Action" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="card quiz">
+        <h2>Quick Quiz</h2>
+        <div id="quizArea"></div>
+        <button onclick="showScore()">Show My Score</button>
+        <div id="score" style="margin-top:10px;font-weight:700"></div>
+      </div>
+    </main>
+
+    <footer>
+      <p>🌱 Together, policies + actions = a cleaner world!</p>
+    </footer>
+  </div>
+
+  <script>
+    const quiz = [
+      {q:'What are environmental policies?',choices:['Rules to protect nature','Shopping rules','Sports rules'],a:0},
+      {q:'What can citizens do daily?',choices:['Throw waste anywhere','Plant trees and recycle','Use more plastic'],a:1},
+      {q:'Who can be eco-leaders?',choices:['Only adults','Children and adults','No one'],a:1}
+    ];
+
+    const quizArea=document.getElementById('quizArea');
+    let answers=Array(quiz.length).fill(null);
+
+    function renderQuiz(){
+      quizArea.innerHTML='';
+      quiz.forEach((item,idx)=>{
+        const div=document.createElement('div');div.className='q';
+        const q=document.createElement('div');q.textContent=(idx+1)+'. '+item.q;div.appendChild(q);
+        const choices=document.createElement('div');choices.className='choices';
+        item.choices.forEach((c,cidx)=>{
+          const btn=document.createElement('button');btn.textContent=c;
+          btn.onclick=()=>{
+            answers[idx]=cidx;
+            [...choices.children].forEach(b=>b.classList.remove('correct','wrong'));
+            if(cidx===item.a)btn.classList.add('correct');else btn.classList.add('wrong');
+          };
+          choices.appendChild(btn);
+        });
+        div.appendChild(choices);
+        quizArea.appendChild(div);
+      });
+    }
+
+    function showScore(){
+      let score=0;answers.forEach((a,i)=>{if(a===quiz[i].a)score++;});
+      document.getElementById('score').textContent='Your score: '+score+' / '+quiz.length;
+    }
+
+    renderQuiz();
+  </script>
+</body>
+</html>

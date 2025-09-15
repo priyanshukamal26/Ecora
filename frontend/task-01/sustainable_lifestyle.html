@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sustainable Lifestyle & Green Habits</title>
+  <style>
+    :root {
+      --bg: #f9fff4;
+      --card: #ffffff;
+      --accent: #81c784;
+      --accent-2: #388e3c;
+      --radius: 18px;
+      --shadow: 0 6px 14px rgba(0,0,0,0.08);
+    }
+    body {
+      margin: 0;
+      font-family: "Comic Sans MS", "Comic Neue", cursive, sans-serif;
+      background: linear-gradient(180deg,#f1f8e9 0%,#dcedc8 100%);
+      color: #222;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+    }
+    .wrap { width: 100%; max-width: 1000px; }
+    header { text-align: center; margin-bottom: 20px; }
+    .logo {
+      width: 80px; height: 80px; margin: 0 auto 12px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, var(--accent), var(--accent-2));
+      display: grid; place-items: center;
+      color: white; font-weight: 700; font-size: 28px;
+      box-shadow: var(--shadow);
+    }
+    h1 { margin: 0; font-size: 28px; color: var(--accent-2); }
+    p.lead { margin: 8px 0 0; color: #555; font-size: 15px; }
+    main { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+    .video-wrap {
+      position: relative; padding-top: 56.25%;
+      border-radius: 12px; overflow: hidden; margin: 12px 0; background: #000;
+    }
+    .video-wrap iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+    }
+    h2 { font-size: 20px; margin: 10px 0; color: var(--accent-2); }
+    .quiz .q { margin: 10px 0; }
+    .choices button {
+      display: block; width: 100%; padding: 10px;
+      border-radius: 12px; border: 2px solid #aed581; background: #fff;
+      margin: 6px 0; cursor: pointer; font-weight: 600;
+    }
+    .choices button.correct { background: #d9fbe4; border-color: #388e3c; }
+    .choices button.wrong { background: #ffd6d6; border-color: #e03131; }
+    footer { text-align: center; margin-top: 20px; font-size: 13px; color: #666; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">🌱</div>
+      <h1>Sustainable Lifestyle & Green Habits</h1>
+      <p class="lead">Small actions today, a greener tomorrow!</p>
+    </header>
+
+    <main>
+      <div class="card">
+        <h2>Read & Learn</h2>
+        <p>
+          Living a sustainable lifestyle means making smart choices that help our planet,
+          people, and animals. It is like being a superhero for Earth! 🌍 A sustainable life
+          is about using resources wisely, so we don’t waste food, water, or energy. For
+          example, switching off lights when leaving a room saves electricity, and carrying
+          a reusable water bottle instead of buying plastic bottles reduces waste. These
+          habits may seem small, but when millions of people do them, they create a huge
+          positive change.
+        </p>
+        <p>
+          Green habits are fun and easy to add to our daily lives. Riding a bicycle or
+          walking instead of using a car helps reduce pollution and keeps us strong and
+          healthy. Recycling paper, cans, and plastics allows old materials to be turned
+          into new items instead of ending up in landfills. Planting trees and caring for
+          gardens bring more greenery, shade, and fresh air. Even helping parents cook
+          without wasting food or sharing toys with friends instead of always buying new
+          ones is a form of sustainability.
+        </p>
+        <p>
+          Kids play a very important role in building a greener future. By reminding family
+          members to recycle, saving water while brushing teeth, or even organizing clean-up
+          days with friends, children can be eco-heroes. Imagine a world with clean rivers,
+          forests full of animals, and cities powered by renewable energy. Together, by
+          choosing green habits, we can make this dream come true. 🌳💧💚
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Watch & Learn</h2>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/PBkmOhOk8nk" 
+                  title="Sustainable Lifestyle & Green Habits" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="card quiz">
+        <h2>Quick Quiz</h2>
+        <div id="quizArea"></div>
+        <button onclick="showScore()">Show My Score</button>
+        <div id="score" style="margin-top:10px;font-weight:700"></div>
+      </div>
+    </main>
+
+    <footer>
+      <p>🌱 A green habit a day keeps pollution away!</p>
+    </footer>
+  </div>
+
+  <script>
+    const quiz = [
+      {q:'What does sustainable lifestyle mean?',choices:['Using more resources','Living in a way that protects the planet','Wasting water'],a:1},
+      {q:'Which habit helps the Earth?',choices:['Leaving lights on','Recycling bottles','Wasting food'],a:1},
+      {q:'What can kids do to be eco-heroes?',choices:['Plant trees','Throw plastic in rivers','Buy lots of toys'],a:0}
+    ];
+
+    const quizArea=document.getElementById('quizArea');
+    let answers=Array(quiz.length).fill(null);
+
+    function renderQuiz(){
+      quizArea.innerHTML='';
+      quiz.forEach((item,idx)=>{
+        const div=document.createElement('div');div.className='q';
+        const q=document.createElement('div');q.textContent=(idx+1)+'. '+item.q;div.appendChild(q);
+        const choices=document.createElement('div');choices.className='choices';
+        item.choices.forEach((c,cidx)=>{
+          const btn=document.createElement('button');btn.textContent=c;
+          btn.onclick=()=>{
+            answers[idx]=cidx;
+            [...choices.children].forEach(b=>b.classList.remove('correct','wrong'));
+            if(cidx===item.a)btn.classList.add('correct');else btn.classList.add('wrong');
+          };
+          choices.appendChild(btn);
+        });
+        div.appendChild(choices);
+        quizArea.appendChild(div);
+      });
+    }
+
+    function showScore(){
+      let score=0;answers.forEach((a,i)=>{if(a===quiz[i].a)score++;});
+      document.getElementById('score').textContent='Your score: '+score+' / '+quiz.length;
+    }
+
+    renderQuiz();
+  </script>
+</body>
+</html>
