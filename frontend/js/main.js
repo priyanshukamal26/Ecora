@@ -119,3 +119,70 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 //   const originalText = mainHeading.textContent;
 //   typeWriter(mainHeading, originalText, 80);
 // });
+
+
+
+
+
+
+
+
+
+
+// Login page
+
+
+// Typing + heartbeat for Welcome Back
+document.addEventListener("DOMContentLoaded", () => {
+  const textElement = document.getElementById("welcome-text");
+  const text = "Welcome Back 🌱";
+  let i = 0;
+
+  // add cursor blink while typing
+  textElement.classList.add("typing-active");
+
+  function typeWriter() {
+    if (i < text.length) {
+      textElement.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 100); // typing speed
+    } else {
+      // stop blinking cursor and add heartbeat
+      textElement.classList.remove("typing-active");
+      textElement.classList.add("heartbeat");
+    }
+  }
+
+  typeWriter();
+});
+
+
+
+
+
+
+// Register page
+
+
+// Typing + heartbeat for Register page
+document.addEventListener("DOMContentLoaded", () => {
+  const registerElement = document.getElementById("register-text");
+  if (registerElement) {
+    const text = "Join Us 🌱";
+    let i = 0;
+    registerElement.classList.add("typing-active");
+
+    function typeWriter() {
+      if (i < text.length) {
+        registerElement.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+      } else {
+        registerElement.classList.remove("typing-active");
+        registerElement.classList.add("heartbeat");
+      }
+    }
+    registerElement.textContent = ""; // clear before typing
+    typeWriter();
+  }
+});
